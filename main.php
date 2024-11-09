@@ -7,7 +7,6 @@ if (!isset($_COOKIE['logged_in']) || $_COOKIE['logged_in'] !== 'true') {
   exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -19,7 +18,7 @@ if (!isset($_COOKIE['logged_in']) || $_COOKIE['logged_in'] !== 'true') {
 <body>
   <h2>ようこそ、<?php echo htmlspecialchars($_SESSION['username']); ?>さん！</h2>
   <p>ログインに成功しました。</p>
-  <a href="logout.php">ログアウト</a>
+  <a href="logout.php">ログアウトする</a>
 </body>
 
 </html>

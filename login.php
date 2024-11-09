@@ -3,6 +3,7 @@
 session_start();
 
 // JSONファイルのパス
+// id,passは固定
 $usernameFile = __DIR__ . '/data/user.json';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user['username'] === $inputUsername && hash('sha256', $inputPassword) === $user['password']) {
       // 認証成功
       $authenticated = true;
-      setcookie('logged_in', 'true', time() + 86400, "/", "", true, true); // クッキーに24時間保存
+      setcookie('logged_in', 'true', time() + 86400, "/", "", true, true);
       $_SESSION['username'] = $inputUsername;
       header("Location: main.php");
       exit;
